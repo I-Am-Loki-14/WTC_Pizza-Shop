@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Shop</title>
+    <!-- google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chewy&family=Roboto+Slab:wght@100..900&family=Signika:wght@300..700&display=swap"
+        rel="stylesheet">
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <!-- custom css  -->
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- nav link  -->
+    <nav>
+        <div class="container">
+            <h1>PIZZA</h1>
+            <ul class="nav-links">
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Gallery</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+            <button id="toggle">
+                <i class="fa-solid fa-bars" style="color:#ffa400;"></i>
+            </button>
+        </div>
+    </nav>
+    <!-- home start  -->
+    <section class="home" id="home">
+        <div class="curosel">
+            <div class="curosel-img active">
+                <img src="./photo/zuzi99-pizza-3010062.jpg" alt="">
+                <div class="curosel-title">
+                    <h1>We make pizza</h1>
+                    <h2>Premium quality,finest ingredient</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae odit quae fugiat voluptas
+                        cupiditate illum!</p>
+                </div>
+            </div>
+            <div class="curosel-img">
+                <img src="./photo/gallery-img2.jpg" alt="">
+                <div class="curosel-title">
+                    <h1>We make More</h1>
+                    <h2>Premium quality,finest ingredient,Nice Choice</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae odit quae fugiat voluptas
+                        cupiditate illum!</p>
+                </div>
+            </div>
+            <div class="curosel-img">
+                <img src="./photo/gallery-img5.jpg" alt="">
+                <div class="curosel-title">
+                    <h1>We make love</h1>
+                    <h2>Premium quality,finest ingredient.More Order</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae odit quae fugiat voluptas
+                        cupiditate illum!</p>
+                </div>
+            </div>
+            <div>
+                <button id="prev" onclick="prevCarousel()">&leftarrow;</button>
+                <button id="next" onclick="nextCarousel()">&rightarrow;</button>
+            </div>
+        </div>
+    </section>
+    <!-- home end  -->
+    <script src="js/javascript.js"></script>
+</body>
+
+</html>
