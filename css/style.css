@@ -27,8 +27,15 @@
   align-items: center;
   font-family: var(--font);
   color: var(--primary-color);
-  padding: 0.5rem 1rem;
   position: relative;
+}
+.container {
+  padding: 1rem;
+  margin: 0 auto;
+}
+p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
 }
 .container h1:hover {
   color: var(--secondary-color);
@@ -61,6 +68,13 @@
 @media (max-width: 992px) {
   .container {
     width: 700px;
+  }
+  .about .about-content,
+  .about .about-img {
+    width: 100%;
+  }
+  .about .about-content {
+    margin-bottom: 1.5rem;
   }
 }
 @media (max-width: 768px) {
@@ -174,4 +188,82 @@
 }
 .home .curosel:hover #next {
   right: 3%;
+}
+.about {
+  padding: 5rem 0;
+}
+.about .container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+}
+.about .about-content {
+  width: 450px;
+}
+.about .about-img {
+  width: 450px;
+}
+.about .about-content {
+  margin-bottom: 1.5rem;
+}
+.about .about-content h1,
+.about .about-content h2 {
+  text-transform: uppercase;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+.about .about-content p {
+  text-align: justify;
+}
+.about .about-img img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 10px;
+}
+/* gallery  */
+.title {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: var(--font);
+  color: var(--primary-color);
+  margin: 1rem 0;
+  text-decoration: underline 3px solid var(--primary-color);
+  text-underline-offset: 1rem;
+}
+.gallery-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+.gallery-content .card {
+  flex: 1 1 350px;
+  overflow: hidden;
+  border-radius: 1rem;
+  transition: 0.3s all;
+  background-color: var(--bg-light);
+}
+.gallery-content .card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+.gallery-content .card .card-body {
+  padding: 0 1rem;
+}
+.gallery-content .card .card-body h2 {
+  margin: 1rem 0;
+}
+.gallery-content .card .card-body p {
+  color: var(--black);
+}
+.gallery-content .card:hover {
+  transform: scale(1.05);
 }
