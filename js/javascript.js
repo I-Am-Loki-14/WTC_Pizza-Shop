@@ -31,17 +31,19 @@ setInterval(()=>nextCarousel(),3000)
 // form 
 
 const form = document.querySelector("#form")
-form.addEventListener('submit', (e)=>{
+console.log(form);
+
+form.addEventListener('submit',function (e){
   e.preventDefault();
 
-  const formData = new FormData(this);
+  const formData = new FormData(e.target);
   const data = Object.fromEntries(formData.entries())
   let isValid = true;
   const validations ={
-            name:data.name.trim() != "",
-            email:data.email.trim() != "",
-            subject:data.subject.trim() != "",
-            message:data.message.trim() != "",
+            name:data.name.trim() !== "",
+            email:data.email.trim() !== "",
+            subject:data.subject.trim() !== "",
+            message:data.message.trim() !== "",
   };
   for(field in validations){
     if(!validations[field]){
@@ -53,6 +55,35 @@ form.addEventListener('submit', (e)=>{
   }
   if (isValid) {
     alert("SUCCESS! Message successfully sent");
-    this.reset();
+    e.target.reset();
   }
 })
+
+
+const navlinks = document.querySelectorAll('nav ul li a');
+const sections = document.querySelectorAll('section');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            let activelink = entry.target.getAttribute('id');
+            navlinks.forEach(nav => nav.classList.remove('activee'))
+            document.querySelector(`a[href="#${activelink}"]`).classList.add('activee')
+        }
+    })
+},{threshold:0.5})
+sections.forEach(section => observer.observe(section))
+
+
+const up = document.querySelector("#up");
+up.onclick = () => {
+    window.scrollTo(0,0)
+}
+
+window.onscroll = () => {
+    if (window.scrollY >= 600) {
+        up.style.opacity = 1;
+    } else {
+        up.style.opacity = 0;
+    }
+}
